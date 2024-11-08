@@ -54,7 +54,7 @@
   --background-blur: 5px; /* app background blur [default: 0px] */
 
   /* HOME BUTTON ICON */
-  --home-icon: url(https://upload.wikimedia.org/wikipedia/commons/8/86/Black_Sun_glich.gif?20220511074000); /* this is the home button, when you replace it make sure its a LINK */
+  --home-icon: url(https://scrv.xyz/cdn/bsg.gif); /* this is the home button, when you replace it make sure its a LINK */
   --home-position: center; /* home button icon position [default: center] */
   --home-size: 90px; /* home button icon size [default: 40px] */
 
