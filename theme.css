@@ -1,15 +1,15 @@
 /**
  * @name discordtheme
- * @author hrtaddict
- * @version 6.3.0
- * @description A very simple for of ClearVision.
+ * @author ganjamancer
+ * @version 7
+ * @description A very simple fork of ClearVision.
  * @source https://github.com/ganjamancer/discordtheme
  * @website https://scrv.xyz
- * @invite Hz6tRECq9E
+ * @invite kFZk9Brxs3 
  */
 
 /* IMPORT CSS */
-@import url("https://clearvision.github.io/ClearVision-v7/main.css");
+@import url("https://raw.githubusercontent.com/ganjamancer/discordtheme/refs/heads/main/main.css");
 
 /* SETTINGS */
 :root {
