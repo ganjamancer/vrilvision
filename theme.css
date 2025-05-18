@@ -124,6 +124,9 @@ button[aria-label="Send a gift"] {
   width: calc(100% - var(--custom-guild-list-width)) !important;
 }
 
-.private-channels-uid_23994___shop {
-  display: none;
+/* moves the guild name to the left instead of being in the middle */
+
+.title_c38106 {
+  justify-content: left;
+  left: 10px;
 }
