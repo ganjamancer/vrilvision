@@ -125,6 +125,8 @@ button[aria-label="Send a gift"] {
   width: calc(100% - var(--custom-guild-list-width)) !important;
 }
 
+/* Puts the guild name in the left corner instead of it being in the centre */
+
 .title_c38106 {
   justify-content: left;
   left: 10px;
