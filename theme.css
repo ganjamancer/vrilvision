@@ -1,7 +1,7 @@
 /**
  * @name VrilVision
  * @author ganjamancer
- * @version 7.0.0
+ * @version 7.0.1
  * @description A very simple fork of ClearVision.
  * @source https://github.com/ganjamancer/discordtheme
  * @website https://scrv.xyz
@@ -9,7 +9,7 @@
  */
 
 /* IMPORT CSS */
-@import url("https://raw.githubusercontent.com/ganjamancer/discordtheme/refs/heads/main/main.css");
+@import url("https://raw.githubusercontent.com/ganjamancer/VrilVision/refs/heads/main/main.css");
 
 :root {
   /* ACCENT COLORS */
@@ -25,7 +25,8 @@
   --offline-color: #808080;
   /* APP BACKGROUND */
   --background-shading-percent: 150%;
-  --background-image: url(); /* blank URL gives you a black background, removing 'url();' with a hex code gives you a solid colour as a background*/
+  --background-image: url();
+  /* blank URL gives you a black background, removing 'url();' with a hex code gives you a solid colour as a background*/
   --background-attachment: fixed;
   --background-filter: saturate(calc(var(--saturation-factor, 1) * 1));
   /* USER POPOUT BACKGROUND */
@@ -100,7 +101,7 @@
 .avatar_c19a55:hover.clickable_c19a55:hover {
   filter: drop-shadow(0 0 8px);
   color: #ff0000;
-  transform: scale(1.2) rotate(360deg); 
+  transform: scale(1.2) rotate(360deg);
   transition: width 0.5s ease, height 0.5s ease, transform 0.5s ease;
 }
 
@@ -108,13 +109,13 @@
 /* changing the colour, obviously changes the colour of the send button */
 
 svg.sendIcon_aa63ab {
-    color: red;
+  color: red;
 }
 
 /* remove the gift box */
 
 button[aria-label="Send a gift"] {
-    display: none;
+  display: none;
 }
 
 /* brings back the original placement of the profile panel */
@@ -123,8 +124,6 @@ button[aria-label="Send a gift"] {
   left: var(--custom-guild-list-width) !important;
   width: calc(100% - var(--custom-guild-list-width)) !important;
 }
-
-/* moves the guild name to the left instead of being in the middle */
 
 .title_c38106 {
   justify-content: left;
