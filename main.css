@@ -561,6 +561,29 @@ code {
     background: rgba(0, 0, 0, 0)
 }
 
+.user-profile-modal-v2:not(.custom-user-profile-theme) {
+    background: hsl(from var(--hsl-background-shading) h s l/calc(alpha * 0.8));
+    border: none
+}
+
+.user-profile-modal-v2:not(.custom-user-profile-theme)::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: var(--user-modal-image) var(--user-modal-position)/var(--user-modal-size) no-repeat;
+    background-attachment: var(--user-modal-attachment);
+    filter: var(--user-modal-filter);
+    z-index: -1
+}
+
+.profile__9c3be {
+    background: var(--hsl-background-shading);
+    outline: none;
+    margin-bottom: 24px;
+    border-radius: 8px
+}
+
 /*! ClearVision v7.0.1 by ClearVision Team */
 .chat_f75fb0 {
     background: rgba(0, 0, 0, 0)
@@ -1003,6 +1026,33 @@ code {
 .container__0be77 {
     background: var(--hsl-card-shading);
     border: none
+}
+
+.answer__4c520 .answerInner__4c520.currentlyVoting__4c520.selected__4c520 {
+    outline: 1px solid var(--hsl-main-color)
+}
+
+.secondaryButtonPresentation__0be77 {
+    background: var(--hsl-main-color);
+    border: rgba(0, 0, 0, 0)
+}
+
+.checkbox_f4f0eb {
+    border-width: 1px
+}
+
+.radioForeground_f4f0eb {
+    color: currentColor
+}
+
+.checkboxSelected_f4f0eb {
+    border: 1px solid var(--hsl-main-color);
+    background: rgba(0, 0, 0, 0)
+}
+
+.votedStyles_a1443c {
+    --custom-poll-style-vote-percentage: hsl(from var(--hsl-main-color) h s l/.2);
+    --custom-poll-style-border: var(--hsl-main-color)
 }
 
 /*! ClearVision v7.0.1 by ClearVision Team */
@@ -1718,6 +1768,30 @@ code {
 }
 
 /*! ClearVision v7.0.1 by ClearVision Team */
+.container__53cea {
+    background: rgba(0, 0, 0, 0);
+    border: none
+}
+
+.defaultTextInput__7b848 {
+    background: rgba(0, 0, 0, 0)
+}
+
+.defaultTextInput__7b848:focus {
+    box-shadow: none
+}
+
+.addAnswerButton_d97f89:hover {
+    background-color: var(--background-mod-subtle);
+    box-shadow: inset 0 0 0 1px var(--hover-color)
+}
+
+.scroller__01c8c,
+.voters__01c8c {
+    background: rgba(0, 0, 0, 0)
+}
+
+/*! ClearVision v7.0.1 by ClearVision Team */
 .scroller__6fd0e {
     background: rgba(0, 0, 0, 0)
 }
@@ -2200,9 +2274,13 @@ code {
     border-color: var(--hsl-hover-color)
 }
 
-.container__98cbd.active__98cbd,
-.container__98cbd.warning__98cbd {
+.container__98cbd:is(.active__98cbd, .warning__98cbd) {
     background: var(--hsl-card-shading)
+}
+
+.parentContainer__98cbd:hover .container__98cbd:is(.active__98cbd, .warning__98cbd) {
+    background: var(--hsl-card-shading);
+    border-color: var(--hsl-hover-color)
 }
 
 .sidebarContainer__89463 {
@@ -2211,8 +2289,7 @@ code {
 
 /*! ClearVision v7.0.1 by ClearVision Team */
 .shopScroll__6db1d,
-.pageWrapper__6db1d,
-.page__6db1d {
+.page__1feb0 {
     background: rgba(0, 0, 0, 0)
 }
 
@@ -3727,21 +3804,21 @@ code {
     background-color: rgba(0, 0, 0, 0)
 }
 
-.button_e131a9.buttonColor_e131a9 {
+:is(.theme-light, .theme-dark) .button_e131a9.buttonColor_e131a9 {
     background: var(--hsl-main-color)
 }
 
-.button_e131a9.buttonColor_e131a9:hover {
+:is(.theme-light, .theme-dark) .button_e131a9.buttonColor_e131a9:hover {
     background: var(--hsl-hover-color)
 }
 
-.button_e131a9.buttonColor_e131a9.buttonActive_e131a9 {
+:is(.theme-light, .theme-dark) .button_e131a9.buttonColor_e131a9.buttonActive_e131a9 {
     background: hsl(from var(--hsl-main-color) h s l/0.4);
     color: var(--button-secondary-text);
     border-color: hsl(from var(--hsl-main-color) h s l/0.2)
 }
 
-.button_e131a9.buttonColor_e131a9.buttonActive_e131a9:hover {
+:is(.theme-light, .theme-dark) .button_e131a9.buttonColor_e131a9.buttonActive_e131a9:hover {
     background: hsl(from var(--hsl-hover-color) h s l/0.3)
 }
 
@@ -3932,7 +4009,6 @@ code {
 }
 
 .sidebarList_c48ade {
-    margin-bottom: var(--custom-app-panels-height);
     border-top-left-radius: 10px;
     border: none;
     -webkit-backdrop-filter: none;
@@ -3940,8 +4016,7 @@ code {
 }
 
 .container__2637a {
-    background: hsl(from var(--hsl-background-shading) h s l/calc(var(--background-shading-percent) * 0.2));
-    padding: 0
+    background: hsl(from var(--hsl-background-shading) h s l/calc(var(--background-shading-percent) * 0.2))
 }
 
 .animatedContainer_f37cb1 {
@@ -3953,11 +4028,6 @@ code {
     box-shadow: 0 0 6px 1px var(--hsl-main-color)
 }
 
-.bottom__7aaec,
-.unreadBottom__629e4 {
-    bottom: 8px
-}
-
 .bar__7aaec,
 .bar__3b95d {
     background-color: var(--hsl-main-color);
@@ -3966,7 +4036,7 @@ code {
 
 .unreadIcon__7aaec,
 .barText__7aaec {
-    color: var(--button-filled-brand-text) !important
+    color: var(--interactive-active) !important
 }
 
 .spineBorder__5b40b {
@@ -4119,7 +4189,8 @@ code {
 
 /*! ClearVision v7.0.1 by ClearVision Team */
 .privateChannels__35e86 {
-    background: hsl(from var(--hsl-background-shading) h s l/calc(var(--background-shading-percent) * 0.2))
+    background: hsl(from var(--hsl-background-shading) h s l/calc(var(--background-shading-percent) * 0.2));
+    padding-bottom: var(--custom-app-panels-height, 0)
 }
 
 .scroller__99e7c {
@@ -4212,10 +4283,6 @@ code {
 }
 
 /*! ClearVision v7.0.1 by ClearVision Team */
-.platform-win .sidebar_c48ade {
-    border-radius: 0
-}
-
 .sidebar_c48ade {
     background: rgba(0, 0, 0, 0)
 }
