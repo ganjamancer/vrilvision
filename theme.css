@@ -3,49 +3,56 @@
  * @author ganjamancer
  * @version 7.0.1
  * @description A very simple fork of ClearVision.
- * @source https://github.com/ganjamancer/discordtheme
+ * @source https://github.com/ganjamancer/vrilvision
  * @website https://scrv.xyz
- * @invite kFZk9Brxs3
+ * @invite ejubbwbh
  */
 
 /* IMPORT CSS */
 @import url("https://raw.githubusercontent.com/ganjamancer/VrilVision/refs/heads/main/main.css");
 
 :root {
-  /* ACCENT COLORS */
+  /* General variables */
+  --background-shading-percent: 150%;
+  --saturation-factor: 1;
+  
+  /* Accent colors */
   --main-color: #ff0000;
   --hover-color: #910606;
   --success-color: #cf4d5f;
   --danger-color: #982929;
-  /* STATUS COLORS */
+  
+  /* Status colors */
   --online-color: #43b581;
   --idle-color: #faa61a;
   --dnd-color: #982929;
   --streaming-color: #593695;
   --offline-color: #808080;
-  /* APP BACKGROUND */
-  --background-shading-percent: 150%;
+  
+  /* Background variables; Vencord requires that the images are from Github or Imgur URLs */
   --background-image: url();
-  /* blank URL gives you a black background, removing 'url();' with a hex code gives you a solid colour as a background*/
   --background-attachment: fixed;
   --background-filter: saturate(calc(var(--saturation-factor, 1) * 1));
-  /* USER POPOUT BACKGROUND */
+
+
+  
+  /* User panel background variables (inherit from root for consistency) */
   --user-popout-image: var(--background-image);
   --user-popout-attachment: var(--background-attachment);
   --user-popout-filter: var(--background-filter);
-  /* USER MODAL BACKGROUND */
   --user-modal-image: var(--background-image);
   --user-modal-attachment: var(--background-attachment);
   --user-modal-filter: var(--background-filter);
-  /* HOME ICON */
+  
+  /* Home icon; Vencord requires that the images are from Github or Imgur URLs */
   --home-icon: url(https://scrv.xyz/cdn/bsg.gif);
-  /* FONTS */
+
+  /* Font variables */
   --main-font: Hack;
-  --code-font: Consolas, "gg mono", "Liberation Mono", Menlo, Courier, monospace;
+  --code-font: Consolas, "gg mono", "Liberation Mono", Menlo, monospace;
 }
 
-/* THEME SPECIFIC SHADING */
-/* LIGHT THEME */
+/* Light theme variables (use classes to apply) */
 :is(.theme-light, .theme-dark .theme-light) {
   --background-shading: rgba(252, 252, 252, 0.3);
   --card-shading: rgba(252, 252, 252, 0.3);
@@ -56,7 +63,7 @@
   --muted-text: #75757e;
 }
 
-/* ASH THEME */
+/* Ash theme variables (use classes to apply) */
 :is(.theme-dark, .theme-light .theme-dark) {
   --background-shading: rgba(0, 0, 0, 0.4);
   --card-shading: rgba(0, 0, 0, 0.2);
@@ -67,7 +74,7 @@
   --muted-text: #aeaeb4;
 }
 
-/* DARK THEME */
+/* Darker theme variables (use classes to apply) */
 :is(.theme-darker, .theme-light .theme-darker) {
   --background-shading: rgba(0, 0, 0, 0.6);
   --card-shading: rgba(0, 0, 0, 0.3);
@@ -78,7 +85,7 @@
   --muted-text: #94949c;
 }
 
-/* ONYX THEME */
+/* Midnight theme variables (use classes to apply) */
 :is(.theme-midnight, .theme-light .theme-midnight) {
   --background-shading: rgba(0, 0, 0, 0.8);
   --card-shading: rgba(0, 0, 0, 0.4);
@@ -89,45 +96,49 @@
   --muted-text: #86868e;
 }
 
-/* changing the colour changes the "glow" around the pfp */
-
-.avatar_c19a55.clickable_c19a55 {
-  filter: drop-shadow(0 0 5px);
-  color: #ff0000;
+/* Apply a theme using the class attribute */
+html[class*="theme-"] {
+  --background-shading-percent: calc(var(--theme-light-darkness, 0.5) * 150%); /* Theme darkness affects background shading */
 }
 
-/* rotating pfp upon hover */
-
-.avatar_c19a55:hover.clickable_c19a55:hover {
-  filter: drop-shadow(0 0 8px);
-  color: #ff0000;
-  transform: scale(1.2) rotate(360deg);
-  transition: width 0.5s ease, height 0.5s ease, transform 0.5s ease;
+/* Colors for different states of UI elements (e.g., active, hover, focus) */
+:is(.active, .hover, .focus) {
+  --element-color: var(--main-color);
 }
 
-/* makes the send button red */
-/* changing the colour, obviously changes the colour of the send button */
-
+/* Send button styling */
 svg.sendIcon_aa63ab {
-  color: red;
+  color: var(--main-color);
 }
 
-/* remove the gift box */
-
+/* Hide gift box button */
 button[aria-label="Send a gift"] {
   display: none;
 }
 
-/* brings back the original placement of the profile panel */
-
+/* Position the user panel */
 .panels_c48ade {
   left: var(--custom-guild-list-width) !important;
   width: calc(100% - var(--custom-guild-list-width)) !important;
 }
 
-/* Puts the guild name in the left corner instead of it being in the centre */
-
+/* Align guild name to the left */
 .title_c38106 {
-  justify-content: left;
-  left: 10px;
+  justify-content: flex-start;
+}
+
+/* Glow around profile picture */
+
+.avatar_c19a55.clickable_c19a55 {
+  filter: drop-shadow(0 0 5px);
+  color: var(--main-color);
+}
+
+/* Profile picture rotates upon hover */
+
+.avatar_c19a55:hover.clickable_c19a55:hover {
+  filter: drop-shadow(0 0 8px);
+  color: var(--main-color);
+  transform: scale(1.2) rotate(360deg);
+  transition: width 0.5s ease, height 0.5s ease, transform 0.5s ease;
 }
